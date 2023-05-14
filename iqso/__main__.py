@@ -6,7 +6,7 @@ from telethon import functions
 from .Config import Config
 from .core.logger import logging
 from .core.session import iqthon
-from iqso import add_bot_to_logger_group, load_plugins, setup_bot, startupmessage, verifyLoggerGroup
+from .utlis import add_bot_to_logger_group, load_plugins, setup_bot, startupmessage, verifyLoggerGroup
 LOGS = logging.getLogger("تليثون العرب")
 print(iqso.__copyright__)
 print("المرخصة بموجب شروط " + iqso.__license__)
