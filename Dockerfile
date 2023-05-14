@@ -2,7 +2,7 @@ FROM telethonArab/iqso:slim-buster
 
 RUN git clone https://github.com/telethonArab/iqthon.git /root/iqso
 
-WORKDIR /root/Arab
+WORKDIR /root/iqso
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 
