@@ -4,7 +4,7 @@ import re
 
 from telethon.events import CallbackQuery
 
-from Arab import iqthon
+from iqso import iqthon
 
 
 @iqthon.tgbot.on(CallbackQuery(data=re.compile(b"secret_(.*)")))
