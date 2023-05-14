@@ -8,7 +8,7 @@ from telethon.errors import UserIsBlockedError
 from telethon.events import CallbackQuery, StopPropagation
 from telethon.utils import get_display_name
 
-from Arab import Config, iqthon
+from iqso import Config, iqthon
 
 from ..core import check_owner, pool
 from ..core.logger import logging
