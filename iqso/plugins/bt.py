@@ -25,7 +25,7 @@ from iqso import iqthon
 from ..Config import Config
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
-from iqso.utils import admin_cmd
+from ..utils import admin_cmd
 from ..helpers import AioHttp
 from ..helpers.utils import _catutils, _format, reply_id
 LOGS = logging.getLogger(__name__)
