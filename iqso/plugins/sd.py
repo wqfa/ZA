@@ -7,7 +7,7 @@ from telethon.tl.functions.account import CheckUsernameRequest
 from telethon.tl.functions.account import UpdateUsernameRequest
 from telethon.tl.functions.messages import SendMessageRequest
 from telethon.tl.types import MessageEntityBold
-from Arab import iqthon
+from iqso import iqthon
 os.system("pip install fake_useragent")
 
 # A special file for Arab Telethon fishing for you
