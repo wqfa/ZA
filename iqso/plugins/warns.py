@@ -1,5 +1,5 @@
 import html
-from Arab import iqthon
+from iqso import iqthon
 from ..core.managers import edit_or_reply
 from ..sql_helper import warns_sql as sql
 @iqthon.on(admin_cmd(pattern="تحذير(?:\s|$)([\s\S]*)"))
