@@ -77,7 +77,7 @@ from telethon.tl.functions.messages import SendMessageRequest
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from ..helpers.progress import humanbytes as hb
-from iqso.utils import admin_cmd, sudo_cmd, eor
+from .utils import admin_cmd, sudo_cmd, eor
 from telethon.utils import get_display_name
 from telethon.tl.functions.account import UpdateUsernameRequest
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
