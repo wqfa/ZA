@@ -4,7 +4,7 @@ from telethon import Button
 from telethon.errors import MessageNotModifiedError
 from telethon.events import CallbackQuery
 
-from Arab import iqthon
+from iqso import iqthon
 
 from ..Config import Config
 from ..core.logger import logging
