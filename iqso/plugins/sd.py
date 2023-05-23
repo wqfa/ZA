@@ -19,7 +19,7 @@ a = "qwertyuiopassdfghjklzxcvbnm"
 b = "1234567890"
 e = "qwertyuiopassdfghjklzxcvbnm1234567890"
 
-# بس توصلة افضحك 😁😂
+# تعلم 🏴
 
 stop_phishing = True
 workers = {
@@ -92,7 +92,7 @@ def gen_user(choice):
 
 
 
-def check_user(username, session, user_agent):
+async def check_user(event, channel_id, username, session, user_agent):
     check_url = f'https://t.me/{username}'
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
@@ -101,10 +101,21 @@ def check_user(username, session, user_agent):
         'user-agent': user_agent
     }
     
-    response = session.get(check_url, headers=headers)
-    if 'If you have <strong>Telegram</strong>, you can contact <a class="tgme_username_link"' in response.text:
-        return f'@{username}'
-    else:
+    try:
+        response = session.get(check_url, headers=headers, timeout=3)
+        if 'If you have <strong>Telegram</strong>, you can contact <a class="tgme_username_link"' in response.text:
+            # check ban
+            try:
+                result = await event.client(CheckUsernameRequest(channel=channel_id, username=username))
+                if result == True:
+                    return f'@{username}'
+                else:
+                    return False
+            except Exception as error:
+                return False
+        else:
+            return False
+    except:
         return False
 
 @iqthon.on(events.NewMessage(outgoing=True, pattern=r'.اغلاق الصيد'))
