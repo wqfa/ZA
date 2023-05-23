@@ -152,7 +152,7 @@ async def PhishingHundler(event):
             workers[PhishType]['worker'] = True
             try:
                 channel = await event.client(CreateChannelRequest(title=f'صيد : {PhishType}', about=f'IQTHON'))
-                await event.edit('تم تفعيل امر الصيد بنجاح')
+                await event.edit(' تم تفعيل امر الصيد بنجاح ✅ ملاحظة في حالة الصيد يعطيك فقط يوزرات محظورة هذا بمعنى ان حسابك نحظر من صيد اليوزرات لمدة 24 ساعة  ')
                 
                 while stop_phishing == True:
                     session = requests.Session()
