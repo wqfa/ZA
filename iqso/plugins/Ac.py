@@ -83,6 +83,7 @@ from telethon.tl.functions.account import UpdateUsernameRequest
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 from telethon.tl.functions.channels import GetMessagesRequest
 from telethon.tl.functions.messages import SendVoteRequest
+from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.functions.channels import LeaveChannelRequest
 from telethon.tl.functions.messages import SendReactionRequest
 from telethon.tl.types import ReactionEmoji
