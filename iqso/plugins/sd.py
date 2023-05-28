@@ -159,7 +159,7 @@ async def PhishingHundler(event):
                     user_agent = ua.random
                     username = gen_user(PhishType)
                                         
-                    valid = check_user(username, session, user_agent)
+                    valid = await check_user(event, channel.chats[0].id, username, session, user_agent)
                     if valid != False:
                         await event.client.send_message(channel.chats[0].id, message=valid)
                     
