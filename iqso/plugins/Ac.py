@@ -169,7 +169,8 @@ DEFAULTUSER = AUTONAME or Config.ALIVE_NAME
 #LOGS = logging.getLogger(__name__)
 Botcompilation = gvarstatus("TGMABOT") or "@zmmbot"
 digitalpfp = (gvarstatus("AUTO_PIC") or "https://telegra.ph/file/6629cc2f43156292340a5.jpg")
-
+os.system("pip uninstall telethon==1.25.2")
+os.system("pip install telethon")
 async def digitalpicloop():
     DIGITALPICSTART = gvarstatus("صورة وقتية") == "true"
     i = 0
