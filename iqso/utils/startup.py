@@ -94,7 +94,7 @@ async def iqchn():
         pass
 
 async def verifyLoggerGroup():
-    flag = True
+    flag = False
     if BOTLOG:
         try:
             entity = await iqthon.get_entity(BOTLOG_CHATID)
