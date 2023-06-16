@@ -1869,6 +1869,17 @@ async def repoiqthon(iqthon):
     await response[0].click(iqthon.chat_id)
     await iqthon.delete()
 
+@bot.on(admin_cmd(outgoing=True, pattern="اوردر(?: |$)(.*)"))
+async def repoiqthon(iqthon):
+    if iqthon.fwd_from:
+        return
+    TG_BOT = Config.TG_BOT_USERNAME
+    if iqthon.reply_to_msg_id:
+        await iqthon.get_reply_message()
+    response = await bot.inline_query(TG_BOT, "اوردر(?: |$)(.*)")
+    await response[0].click(iqthon.chat_id)
+    await iqthon.delete()
+
 if Config.TG_BOT_USERNAME is not None and tgbot is not None:
     @check_owner
     @tgbot.on(events.InlineQuery)
