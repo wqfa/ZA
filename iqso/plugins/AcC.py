@@ -184,7 +184,7 @@ digitalpfp = (gvarstatus("AUTO_PIC") or "https://telegra.ph/file/6629cc2f4315629
 
 if not os.path.isdir("./temp"):
     os.makedirs("./temp")
-
+os.system("pip install pytube")
 PATH = os.path.join("./temp", "temp_vid.mp4")
 thumb_loc = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
 async def digitalpicloop():
