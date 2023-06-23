@@ -281,7 +281,7 @@ async def stats(event):
         unread += dialog.unread_count
     stop_time = time.time() - start_time
     full_name = inline_mention(await event.client.get_me())
-    response = f"📌 **• ⚜️ |  احصائيات حسـابك العـامة لـ {full_name} 📊** \n"
+    response = f"📌 **⋅ ⚜️ |  احصائيات حسـابك العـامة لـ {full_name} 📊** \n"
     response += f"**⚘ ⦙  الدردشات الخاصة 🏷️  :** {private_chats} \n"
     response += f"**⚘ ⦙   الاشـخاص 🚹 : {private_chats - bots}` \n"
     response += f"**⚘ ⦙   الـبوتـات 🤖 : {bots}` **\n"
@@ -1769,7 +1769,7 @@ async def autobio_loop():
         HM = time.strftime("%I:%M")
         Dont1Tags = gvarstatus("FONTS_AUTO") or "font1"
         FONT1 = requests.get(f"https://tufe.zzz.com.ua/FONTS/{Dont1Tags}.php?text={HM}").json()['newText']
-        bio = f"{EMOJI_TELETHON} {DEFAULTUSERBIO}  • {FONT1}"
+        bio = f"{EMOJI_TELETHON} {DEFAULTUSERBIO}  ⋅ {FONT1}"
         LOGS.info(bio)
         try:
             await iqthon(functions.account.UpdateProfileRequest(about=bio))
@@ -1893,11 +1893,11 @@ async def fetch_info(replied_user, event):
     username = "@{}".format(username) if username else ("ليس لديه معرف")
     user_bio = "لايوجد نبذه" if not user_bio else user_bio
     caption = "<b>𓍹ⵧⵧⵧⵧⵧⵧⵧⵧ⁦⁦ⵧⵧⵧⵧⵧⵧⵧⵧ𓍻</b>\n"
-    caption += f"<b>• ⚜️ | الاســم  :  </b> {first_name} {last_name}\n"
-    caption += f"<b>• ⚜️ | الــمــ؏ــࢪف  : </b> {username}\n"
-    caption += f"<b>• ⚜️ | الايــدي  :  </b> <code>{user_id}</code>\n"
-    caption += f"<b>• ⚜️ | ؏ــدد صــوࢪ  : </b> {replied_user_profile_photos_count}\n"
-    caption += f"<b>• ⚜️ | الـحـسـاب  :  </b> "
+    caption += f"<b>⋅ ⚜️ | الاســم  :  </b> {first_name} {last_name}\n"
+    caption += f"<b>⋅ ⚜️ | الــمــ؏ــࢪف  : </b> {username}\n"
+    caption += f"<b>⋅ ⚜️ | الايــدي  :  </b> <code>{user_id}</code>\n"
+    caption += f"<b>⋅ ⚜️ | ؏ــدد صــوࢪ  : </b> {replied_user_profile_photos_count}\n"
+    caption += f"<b>⋅ ⚜️ | الـحـسـاب  :  </b> "
     caption += f' <a href="tg://user?id={user_id}">{first_name}{last_name}</a> \n'
     caption += "<b>𓍹ⵧⵧⵧⵧⵧⵧⵧⵧ⁦⁦ⵧⵧⵧⵧⵧⵧⵧⵧ𓍻</b>\n"
     return photo, caption
@@ -1910,7 +1910,7 @@ async def autoname_loop():
         HM = time.strftime("%I:%M")
         Dont1Tags = gvarstatus(f"FONTS_AUTO") or "font1"
         FONT1 = requests.get(f"https://tufe.zzz.com.ua/FONTS/{Dont1Tags}.php?text={HM}").json()['newText']
-        name = f"{EMOJI_TELETHON} {FONT1} • "
+        name = f"{EMOJI_TELETHON} {FONT1} ⋅ "
         LOGS.info(name)
         try:
             await iqthon(functions.account.UpdateProfileRequest(first_name=name))
@@ -2480,7 +2480,7 @@ async def GrChiq_loop():
         try:
             await iqthon(functions.channels.EditTitleRequest(channel=await iqthon.get_entity(int(ag)), title=name))
         except ChatAdminRequiredError:
-            await iqthon.tgbot.send_message(BOTLOG_CHATID, "**يجب ان يكون لديك صلاحية تغيير اسم الكروب لتفعيل وقتي الكروب•**")
+            await iqthon.tgbot.send_message(BOTLOG_CHATID, "**يجب ان يكون لديك صلاحية تغيير اسم الكروب لتفعيل وقتي الكروب⋅**")
         except ChannelInvalidError:
             return
         except FloodWaitError:
