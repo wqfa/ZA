@@ -179,7 +179,7 @@ DEFAULTUSER = gvarstatus("FIRST_NAME") or ALIVE_NAME
 DEFAULTUSERBIO = gvarstatus("DEFAULT_BIO") or "الحمد الله"
 DEFAULTUSER = AUTONAME or Config.ALIVE_NAME
 #LOGS = logging.getLogger(__name__)
-Botcompilation = gvarstatus("TGMABOT") or "@zmmbot"
+Botcompilation = gvarstatus("TGMABOT") or "@@zmmbot"
 digitalpfp = (gvarstatus("AUTO_PIC") or "https://telegra.ph/file/6629cc2f43156292340a5.jpg")
 
 if not os.path.isdir("./temp"):
@@ -580,7 +580,7 @@ async def UnBlockList(event):
         order_reply = await event.edit(f'[ ! ] **تم .فك المحظورين من حسابك يرجى الأنتظار دقائق في حالة تبقى عدد قليل من المحظورين ويرجى الأنتباة هذا الأمر يسبب تعليق في حسابك في حالة أكثرت في أستعمال الأمر ** : {len(list.blocked)}\n\n[ + ] **فك المحظورين أكتمل.**')
 c = requests.session()
 milerbot = f'{Botcompilation}'
-iqklanr = ['yes']
+iqklanr1 = ['yes']
 @iqthon.on(admin_cmd(outgoing=True, pattern="زوم ?(.*)"))
 async def memes(mafia):
     reply = await mafia.get_reply_message()
@@ -1086,29 +1086,29 @@ async def iqvois(vois):
         await vois.client.send_file(vois.chat_id, iqvois41 , reply_to=Ti)
         await vois.delete()
 
-@iqthon.on(admin_cmd(pattern="(تجميع النقاط|تجميع نقاط)"))
+@iqthon.on(admin_cmd(pattern="(تجميع المليار|تجميع مليار)"))
 async def _(event):
-    if iqklanr[0] == "yes":
-        await event.edit("**سيتم تجميع النقاط , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
-        channel_entity = await iqthon.get_entity(milerbot)
-        await iqthon.send_message(f'{Botcompilation}', '/start')
+    if iqklanr1[0] == "yes":
+        await event.edit("**سيتم تجميع المليار , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
+        channel_entity = await iqthon.get_entity("@zmmbot")
+        await iqthon.send_message("@zmmbot", '/start')
         await asyncio.sleep(5)
-        msg0 = await iqthon.get_messages(f'{Botcompilation}', limit=1)
+        msg0 = await iqthon.get_messages("@zmmbot", limit=1)
         await msg0[0].click(2)
         await asyncio.sleep(5)
-        msg1 = await iqthon.get_messages(f'{Botcompilation}', limit=1)
+        msg1 = await iqthon.get_messages("@zmmbot", limit=1)
         await msg1[0].click(0)
 
         chs = 1
         for i in range(100):
-            if iqklanr[0] == 'no':
+            if iqklanr1[0] == 'no':
                 break
             await asyncio.sleep(5)
 
             list = await iqthon(GetHistoryRequest(peer=channel_entity, limit=1,
                                                    offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
             msgs = list.messages[0]
-            if msgs.message.find('لا يوجد قنوات في الوقت الحالي , قم يتجميع النقاط بطريقه مختلفه') != -1:
+            if msgs.message.find('لا يوجد قنوات في الوقت الحالي , قم يتجميع المليار بطريقه مختلفه') != -1:
                 await iqthon.send_message(event.chat_id, f"**لاتوجد قنوات للبوت**")
                 break
             url = msgs.reply_markup.rows[0].buttons[0].url
@@ -1118,7 +1118,7 @@ async def _(event):
                 except:
                     bott = url.split('/')[-1]
                     await iqthon(ImportChatInviteRequest(bott))
-                msg2 = await iqthon.get_messages(f'{Botcompilation}', limit=1)
+                msg2 = await iqthon.get_messages("@zmmbot", limit=1)
                 await msg2[0].click(text='تحقق')
                 chs += 1
                 await iqthon.send_message("me", f"تم الاشتراك في {chs} قناة")
@@ -1126,6 +1126,93 @@ async def _(event):
                 await iqthon.send_message(event.chat_id, f"**خطأ حاول بعد 6 ساعات**")
                 break
         await iqthon.send_message(event.chat_id, "**تم الانتهاء من التجميع !**")
+
+iqklanr2 = ['yes']
+@iqthon.on(admin_cmd(pattern="(تجميع العقاب|تجميع عقاب)"))
+async def _(event):
+    if iqklanr2[0] == "yes":
+        await event.edit("**سيتم تجميع  , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
+        channel_entity = await iqthon.get_entity("@MARKTEBOT")
+        await iqthon.send_message("@MARKTEBOT", '/start')
+        await asyncio.sleep(5)
+        msg0 = await iqthon.get_messages("@MARKTEBOT", limit=1)
+        await msg0[0].click(2)
+        await asyncio.sleep(5)
+        msg1 = await iqthon.get_messages("@MARKTEBOT", limit=1)
+        await msg1[0].click(0)
+
+        chs = 1
+        for i in range(100):
+            if iqklanr2[0] == 'no':
+                break
+            await asyncio.sleep(5)
+
+            list = await iqthon(GetHistoryRequest(peer=channel_entity, limit=1,
+                                                   offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
+            msgs = list.messages[0]
+            if msgs.message.find('لايوجد قنوات خلصت') != -1:
+                await iqthon.send_message(event.chat_id, f"**لاتوجد قنوات للبوت**")
+                break
+            url = msgs.reply_markup.rows[0].buttons[0].url
+            try:
+                try:
+                    await iqthon(JoinChannelRequest(url))
+                except:
+                    bott = url.split('/')[-1]
+                    await iqthon(ImportChatInviteRequest(bott))
+                msg2 = await iqthon.get_messages("@MARKTEBOT", limit=1)
+                await msg2[0].click(text='تحقق')
+                chs += 1
+                await iqthon.send_message("me", f"تم الاشتراك في {chs} قناة")
+            except:
+                await iqthon.send_message(event.chat_id, f"**خطأ حاول بعد 6 ساعات**")
+                break
+        await iqthon.send_message(event.chat_id, "**تم الانتهاء من التجميع !**")
+
+iqklanr3 = ['yes']
+@iqthon.on(admin_cmd(pattern="(تجميع العرب|تجميع عرب)"))
+async def _(event):
+    if iqklanr3[0] == "yes":
+        await event.edit("**سيتم تجميع  , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
+        channel_entity = await iqthon.get_entity("@xnsex21bot")
+        await iqthon.send_message("@xnsex21bot", '/start')
+        await asyncio.sleep(5)
+        msg0 = await iqthon.get_messages("@xnsex21bot", limit=1)
+        await msg0[0].click(2)
+        await asyncio.sleep(5)
+        msg1 = await iqthon.get_messages("@xnsex21bot", limit=1)
+        await msg1[0].click(0)
+
+        chs = 1
+        for i in range(100):
+            if iqklanr3[0] == 'no':
+                break
+            await asyncio.sleep(5)
+
+            list = await iqthon(GetHistoryRequest(peer=channel_entity, limit=1,
+                                                   offset_date=None, offset_id=0, max_id=0, min_id=0, add_offset=0, hash=0))
+            msgs = list.messages[0]
+            if msgs.message.find('لايوجد قنوات خلصت') != -1:
+                await iqthon.send_message(event.chat_id, f"**لاتوجد قنوات للبوت**")
+                break
+            url = msgs.reply_markup.rows[0].buttons[0].url
+            try:
+                try:
+                    await iqthon(JoinChannelRequest(url))
+                except:
+                    bott = url.split('/')[-1]
+                    await iqthon(ImportChatInviteRequest(bott))
+                msg2 = await iqthon.get_messages("@xnsex21bot", limit=1)
+                await msg2[0].click(text='تحقق')
+                chs += 1
+                await iqthon.send_message("me", f"تم الاشتراك في {chs} قناة")
+            except:
+                await iqthon.send_message(event.chat_id, f"**خطأ حاول بعد 6 ساعات**")
+                break
+        await iqthon.send_message(event.chat_id, "**تم الانتهاء من التجميع !**")
+
+
+
 
 
 @iqthon.on(admin_cmd(outgoing=True, pattern="ص42$"))
