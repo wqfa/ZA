@@ -2248,7 +2248,25 @@ async def _(event):
         message = reply
         count += 1
     await eor(event, f"عدد الردود على هذا الرساله : {count}")
+from telethon import events
+import asyncio, requests, os
 
+# فاكيو
+@iqthon.on(events.NewMessage(outgoing=True, pattern=r'.كتابة عربي ?(.*)'))
+async def WriteInLetter(event):
+    
+    TheLetter, file_path = (event.message.message).replace('.كتابة عربي', '').strip(), 'TheLetter.jpeg'
+    ImageData = requests.get(f'http://167.71.70.207/api/text/?text={TheLetter}')
+
+    if ImageData.status_code == 200:
+        waiting_msg = await event.reply('__انتظر قليلا...__')
+        with open(file_path, 'wb') as file:
+            file.write(ImageData.content)
+        
+        await event.client.send_file(entity=event.chat_id, file=file_path, reply_to =event.message.id)
+        await waiting_msg.delete(), os.remove(file_path)
+    else:
+        await event.reply('__فشل الاتصال بالـ API__')
 @iqthon.on(admin_cmd(pattern="زاجل ?(.*)"))
 async def pmto(event):
     a = event.pattern_match.group(1)
