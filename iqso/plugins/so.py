@@ -130,7 +130,7 @@ fahs = """‎⿻┊My 𖠄 {my_mention} ٫
 ‌‎⿻┊TimE 𖠄 {TM} ٫
 ‌‎⿻┊UpTimE 𖠄 {uptime} ٫
 ‌‎⿻┊‌‎PinG 𖠄 {ping} ٫
-‌‎⿻┊‌‎VeRsIoN mastar (8.1) ,
+‌‎⿻┊‌‎VeRsIoN mastar (8.2) ,
 ‌‎⿻┊‌‎TeLeThoN Arab 𖠄 @IQTHON"""
 
 @iqthon.on(admin_cmd(pattern="رابط التنصيب(?: |$)(.*)"))    
@@ -266,7 +266,7 @@ async def _(event):
     await asyncio.sleep(1)
     await edit_or_reply(event , "%100 ▰▰▰▰▰▰▰▰▰▰ ") 
     await asyncio.sleep(1)
-    await edit_or_reply(event , """⚘︙ جـاري تـحديث تليثـون العـرب (8.0)
+    await edit_or_reply(event , """⚘︙ جـاري تـحديث تليثـون العـرب (8.2)
 ⌚ انتضر من 5 الى 10 دقائق""")
     try:
         ulist = get_collectionlist_items()
@@ -309,7 +309,7 @@ async def update_owner(event):
             await update_msg.edit(msg_to_update)
             await asyncio.sleep(1)
         
-        await update_msg.edit("""⚘︙ جـاري تـحديث تليثـون العـرب (7.7)
+        await update_msg.edit("""⚘︙ جـاري تـحديث تليثـون العـرب (8.2)
     ⌚ انتضر من 5 الى 10 دقائق""")
         try:
             ulist = get_collectionlist_items()
