@@ -1346,7 +1346,7 @@ async def RepeatImage(event):
         else:
             os_failed = await event.edit(f'**يجب الرد على صوت**')
     except Exception as e:
-        os_failed = await event.edit(f'**بالرجاء استخدام الصيفة التالية : .تكرار صوت 10 + مع الرد على صوت**')
+        os_failed = await event.edit(f'**بالرجاء استخدام الصيفة التالية : .سبام صوت 10 + مع الرد على صوت**')
 @iqthon.on(admin_cmd(outgoing=True, pattern="ص49$"))
 async def iqvois(vois):
     if vois.fwd_from:
