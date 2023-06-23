@@ -559,71 +559,6 @@ async def corona(event):
             await edit_delete(catevent, "**🝳 ⦙  معلومـات فـايروس كـورونا. 💉  \n  فـي بـلد  - {} غـير مـوجودة ❌**".format(country),
                 5,
             )
-@iqthon.on(admin_cmd(pattern=r"بحث(320)?(?:\s|$)([\s\S]*)"))
-async def _(event):
-    "To search songs"
-    reply_to_id = await reply_id(event)
-    reply = await event.get_reply_message()
-    if event.pattern_match.group(2):
-        query = event.pattern_match.group(2)
-    elif reply and reply.message:
-        query = reply.message
-    else:
-        return await edit_or_reply(event, "قم بوضع اسم الاغنيه او رابط بجانب الامر")
-    cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    catevent = await edit_or_reply(event, "جاري تحميل في حاله لم يتم تحميل او ضهر خطأ يرجى المحاوله في وقت اخر ....`")
-    video_link = await yt_search(str(query))
-    if not url(video_link):
-        return await catevent.edit(
-            f"ضهر خطأ يرجى المحاوله في وقت اخر بسبب الضغط {query}`"
-        )
-    cmd = event.pattern_match.group(1)
-    q = "320k" if cmd == "320" else "128k"
-    song_cmd = song_dl.format(QUALITY=q, video_link=video_link)
-    # thumb_cmd = thumb_dl.format(video_link=video_link)
-    name_cmd = name_dl.format(video_link=video_link)
-    try:
-        cat = Get(cat)
-        await event.client(cat)
-    except BaseException:
-        pass
-    stderr = (await _catutils.runcmd(song_cmd))[1]
-    if stderr:
-        return await catevent.edit(f"**خطا :** `{stderr}`")
-    catname, stderr = (await _catutils.runcmd(name_cmd))[:2]
-    if stderr:
-        return await catevent.edit(f"**خطا :** `{stderr}`")
-    # stderr = (await runcmd(thumb_cmd))[1]
-    catname = os.path.splitext(catname)[0]
-    # if stderr:
-    #    return await catevent.edit(f"**خطا :** `{stderr}`")
-    song_file = Path(f"{catname}.mp3")
-    if not os.path.exists(song_file):
-        return await catevent.edit(
-            f"ضهر خطأ يرجى المحاوله في وقت اخر بسبب الضغط {query}`"
-        )
-    await catevent.edit("حسنا لقد وجدت الاغنيه ..🥰")
-    catthumb = Path(f"{catname}.jpg")
-    if not os.path.exists(catthumb):
-        catthumb = Path(f"{catname}.webp")
-    elif not os.path.exists(catthumb):
-        catthumb = None
-    ytdata = await yt_data(video_link)
-    await event.client.send_file(
-        event.chat_id,
-        song_file,
-        force_document=False,
-        caption=f"<b><i>➥ الاسم  :- {ytdata['title']}</i></b>\n<b><i>➥ التحميل :- {hmention}</i></b>",
-        parse_mode="html",
-        thumb=catthumb,
-        supports_streaming=True,
-        reply_to=reply_to_id,
-    )
-    await catevent.delete()
-    for files in (catthumb, song_file):
-        if files and os.path.exists(files):
-            os.remove(files)
-
 
 async def delete_messages(event, chat, from_message):
     itermsg = event.client.iter_messages(chat, min_id=from_message.id)
@@ -634,69 +569,7 @@ async def delete_messages(event, chat, from_message):
     await event.client.send_read_acknowledge(chat)
 
 
-@iqthon.on(admin_cmd(pattern=r"فيديو(?:\s|$)([\s\S]*)"))
-async def _(event):
-    reply_to_id = await reply_id(event)
-    reply = await event.get_reply_message()
-    if event.pattern_match.group(1):
-        query = event.pattern_match.group(1)
-    elif reply and reply.message:
-        query = reply.message
-    else:
-        return await edit_or_reply(event, "`What I am Supposed to find`")
-    cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    catevent = await edit_or_reply(event, "`wi8..! I am finding your song....`")
-    video_link = await yt_search(str(query))
-    if not url(video_link):
-        return await catevent.edit(
-            f"Sorry!. I can't find any related video/audio for `{query}`"
-        )
-    # thumb_cmd = thumb_dl.format(video_link=video_link)
-    name_cmd = name_dl.format(video_link=video_link)
-    video_cmd = video_dl.format(video_link=video_link)
-    stderr = (await _catutils.runcmd(video_cmd))[1]
-    if stderr:
-        return await catevent.edit(f"**Error :** `{stderr}`")
-    catname, stderr = (await _catutils.runcmd(name_cmd))[:2]
-    if stderr:
-        return await catevent.edit(f"**Error :** `{stderr}`")
-    # stderr = (await runcmd(thumb_cmd))[1]
-    try:
-        cat = Get(cat)
-        await event.client(cat)
-    except BaseException:
-        pass
-    # if stderr:
-    #    return await catevent.edit(f"**Error :** `{stderr}`")
-    catname = os.path.splitext(catname)[0]
-    vsong_file = Path(f"{catname}.mp4")
-    if not os.path.exists(vsong_file):
-        vsong_file = Path(f"{catname}.mkv")
-    elif not os.path.exists(vsong_file):
-        return await catevent.edit(
-            f"Sorry!. I can't find any related video/audio for `{query}`"
-        )
-    await catevent.edit("`yeah..! i found something wi8..🥰`")
-    catthumb = Path(f"{catname}.jpg")
-    if not os.path.exists(catthumb):
-        catthumb = Path(f"{catname}.webp")
-    elif not os.path.exists(catthumb):
-        catthumb = None
-    ytdata = await yt_data(video_link)
-    await event.client.send_file(
-        event.chat_id,
-        vsong_file,
-        force_document=False,
-        caption=f"<b><i>➥ Title :- {ytdata['title']}</i></b>\n<b><i>➥ Uploaded by :- {hmention}</i></b>",
-        parse_mode="html",
-        thumb=catthumb,
-        supports_streaming=True,
-        reply_to=reply_to_id,
-    )
-    await catevent.delete()
-    for files in (catthumb, vsong_file):
-        if files and os.path.exists(files):
-            os.remove(files)
+
 @iqthon.on(admin_cmd(pattern=r"معلومات الاغنيه(?: |$)(.*)"))
 async def shazamcmd(event):
     reply = await event.get_reply_message()
