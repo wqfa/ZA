@@ -1,6 +1,6 @@
 from ..utils import is_admin
 from googletrans import Translator
-from iqso import iqthon
+from IqArab import iqthon
 from telethon.sync import functions
 from telethon import events
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
