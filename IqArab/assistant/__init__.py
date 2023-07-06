@@ -1,4 +1,4 @@
-from iqso import BOTLOG, BOTLOG_CHATID, iqthon
+from IqArab import BOTLOG, BOTLOG_CHATID, iqthon
 
 from ..Config import Config
 from ..core.inlinebot import *
