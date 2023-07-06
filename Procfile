@@ -1,1 +1,1 @@
-web: python3 -m iqso
+web: python3 -m IqArab
