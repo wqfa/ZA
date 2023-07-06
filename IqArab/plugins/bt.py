@@ -7,7 +7,7 @@ from telethon import events
 from asyncio.exceptions import TimeoutError
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import ExportChatInviteRequest
-from iqso import iqthon
+from IqArab import iqthon
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers import get_user_from_event, sanga_seperator
 from bs4 import BeautifulSoup
@@ -21,11 +21,11 @@ from barcode.writer import ImageWriter
 from bs4 import BeautifulSoup
 from PIL import Image, ImageColor
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from iqso import iqthon
+from IqArab import iqthon
 from ..Config import Config
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
-from iqso.utils import admin_cmd
+from IqArab.utils import admin_cmd
 from ..helpers import AioHttp
 from ..helpers.utils import _catutils, _format, reply_id
 LOGS = logging.getLogger(__name__)
@@ -412,4 +412,4 @@ async def _(event):
             await iqtevent.edit("قم بوضع سؤالك بجانب الأمر")
         else:
             await iqtevent.delete()
-            await event.client.send_message(event.chat_id, response.message)
+            await event.client.send_message(event.chat_id, response.messag
