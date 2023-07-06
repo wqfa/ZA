@@ -6,8 +6,8 @@ from telethon.tl.types import MessageEntityMentionName
 from requests import get
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
-from iqso import iqthon
-from iqso.core.logger import logging
+from IqArab import iqthon
+from IqArab.core.logger import logging
 from ..Config import Config
 from ..core.managers import edit_or_reply, edit_delete
 from ..helpers import reply_id
@@ -119,4 +119,3 @@ async def who(event):
         await iqthon.delete()
     except TypeError:
         await iqthon.edit(caption, parse_mode="html")
-
