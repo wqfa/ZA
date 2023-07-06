@@ -30,7 +30,6 @@ from telethon.errors import QueryIdInvalidError
 from telethon.tl.types import InputMessagesFilterDocument
 from ..core import check_owner, pool
 from datetime import datetime
-from telethon import version
 from telethon import Button, events ,types 
 from telethon.events import CallbackQuery, InlineQuery
 from telethon.tl.functions.messages import ImportChatInviteRequest
