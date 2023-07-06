@@ -412,4 +412,4 @@ async def _(event):
             await iqtevent.edit("قم بوضع سؤالك بجانب الأمر")
         else:
             await iqtevent.delete()
-            await event.client.send_message(event.chat_id, response.messag
+            await event.client.send_message(event.chat_id, response.message)
