@@ -89,7 +89,7 @@ from telethon.tl.functions.messages import SendMessageRequest
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from ..helpers.progress import humanbytes as hb
-from iqso.utils import admin_cmd, sudo_cmd, eor
+from IqArab.utils import admin_cmd, sudo_cmd, eor
 from telethon.utils import get_display_name
 from telethon.tl.functions.account import UpdateUsernameRequest
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
@@ -108,24 +108,24 @@ from telethon.tl.types import Channel, Chat, InputPhoto, User
 from telethon.errors import ChatAdminRequiredError
 from ..sql_helper.GrChhelper import Auto_ChGR, deletAutoChGR, getGrChAuto
 from telethon.errors import FloodWaitError, ChannelInvalidError
-from iqso import iqthon
-from iqso.core.logger import logging
+from IqArab import iqthon
+from IqArab.core.logger import logging
 from ..Config import Config
 from ..core.managers import edit_delete, edit_or_reply
 from . import ALIVE_NAME, AUTONAME, BOTLOG, BOTLOG_CHATID, DEFAULT_BIO, get_user_from_event
 from ..helpers import get_user_from_event, reply_id
 from ..sql_helper.locks_sql import *
 from ..helpers.functions import deEmojify, hide_inlinebot, waifutxt
-from iqso.utils.decorators import register
+from IqArab.utils.decorators import register
 from ..helpers.utils import reply_id, _catutils, parse_pre, yaml_format, install_pip, get_user_from_event, _format
-from iqso.helpers.functions import convert_toimage,    deEmojify,    phcomment,    threats,    trap,    trash
-from iqso.helpers.functions import convert_tosticker,    flip_image,    grayscale,    invert_colors,    mirror_file,    solarize
+from IqArab.helpers.functions import convert_toimage,    deEmojify,    phcomment,    threats,    trap,    trash
+from IqArab.helpers.functions import convert_tosticker,    flip_image,    grayscale,    invert_colors,    mirror_file,    solarize
 from ..sql_helper.global_list import add_to_list, get_collection_list, is_in_list, rm_from_list
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from ..sql_helper.locks_sql import *
 from telethon import TelegramClient, client, events
 from telethon.tl.functions.contacts import GetBlockedRequest, UnblockRequest
-from iqso import BOTLOG_CHATID
+from IqArab import BOTLOG_CHATID
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from ..Config import Config
 from telethon import Button
@@ -156,11 +156,11 @@ PP_TOO_SMOL = "**⚘ ⦙  هذه الصورة صغيرة جدًا قم بإخت�
 PP_ERROR = "**⚘ ⦙  حدث خطأ أثناء معالجة الصورة  ⚠️**"
 BIO_SUCCESS = "**⚘ ⦙  تم تغيير بايو حسابك بنجاح  ✅**"
 FOTOSECRET = gvarstatus("OR_FOTOSECRET") or "(جلب الذاتية|جلب الوقتية|جلب الذاتيه|جلب الوقتيه|سيف)"
-iqthonfont = gvarstatus("DEFAULT_PIC") or "iqso/sql_helper/IQTHONIMOGE.ttf"
+iqthonfont = gvarstatus("DEFAULT_PIC") or "IqArab/sql_helper/IQTHONIMOGE.ttf"
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
-autopic_path = os.path.join(os.getcwd(), "iqso", "original_pic.png")
-digitalpic_path = os.path.join(os.getcwd(), "iqso", "digital_pic.png")
-autophoto_path = os.path.join(os.getcwd(), "iqso", "photo_pfp.png")
+autopic_path = os.path.join(os.getcwd(), "IqArab", "original_pic.png")
+digitalpic_path = os.path.join(os.getcwd(), "IqArab", "digital_pic.png")
+autophoto_path = os.path.join(os.getcwd(), "IqArab", "photo_pfp.png")
 EMOJI_TELETHON = gvarstatus("ALIVE_EMOJI") or " "
 OR_FOTOAUTO = gvarstatus("OR_FOTOAUTO") or "صورة وقتية"
 plagiarism = gvarstatus("OR_PLAG") or "انتحال"
