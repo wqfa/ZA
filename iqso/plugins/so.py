@@ -10,6 +10,7 @@ import sys
 import asyncio
 import math
 import heroku3
+import telethon
 import urllib3
 import speedtest
 import base64
@@ -30,7 +31,6 @@ from telethon.errors import QueryIdInvalidError
 from telethon.tl.types import InputMessagesFilterDocument
 from ..core import check_owner, pool
 from datetime import datetime
-from telethon import version
 from telethon import Button, events ,types 
 from telethon.events import CallbackQuery, InlineQuery
 from telethon.tl.functions.messages import ImportChatInviteRequest
@@ -40,7 +40,7 @@ from telethon.tl.functions.channels import LeaveChannelRequest
 from telethon.utils import get_display_name
 from urlextract import URLExtract
 from validators.url import url
-from iqso import StartTime, iqthon, catversion
+from IqArab import StartTime, iqthon, catversion
 from ..Config import Config
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
