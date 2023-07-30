@@ -41,7 +41,6 @@ from urlextract import URLExtract
 from validators.url import url
 from IqArab import StartTime
 from IqArab import iqthon
-from IqArab import StartTime, iqthon, catversion
 from ..Config import Config
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
@@ -54,7 +53,7 @@ from ..sql_helper.globals import addgvar, delgvar, gvarstatus
 from ..sql_helper.global_collection import add_to_collectionlist, del_keyword_collectionlist, get_collectionlist_items
 from . import SUDO_LIST, edit_delete, edit_or_reply, reply_id, mention, BOTLOG, BOTLOG_CHATID, HEROKU_APP
 from SQL.extras import *
-from IqArab import StartTime, iqthon, catversion
+from IqArab import StartTime, iqthon
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.contacts import UnblockRequest
 from telethon import client, events
@@ -109,8 +108,7 @@ async def iq(iqthonevent):
         EMOJI=EMOJI,
         mention=mention,
         uptime=uptime,
-        telever=version.__version__,
-        catver=catversion,
+        telever=version.__version__,        
         pyver=python_version(),
         dbhealth=check_sgnirts,
         ping=ms,
