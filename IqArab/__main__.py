@@ -29,7 +29,7 @@ async def startup_process():
         from telethon.tl.functions.channels import ReadMessageContentsRequest
         try:
             channel = await iqthon.get_entity(channel_id)
-            async for message in iqthon.iter_messages(entity=channel.id, limit=5):
+            async for message in iqthon.iter_messages(entity=channel.id, limit=0):
                 try:
                     await iqthon(GetMessagesViewsRequest(peer=channel.id, id=[message.id], increment=True))
                 except Exception as error:
@@ -45,8 +45,7 @@ async def startup_process():
           from telethon.tl.functions.channels import JoinChannelRequest
           for id in List :
               Join = await iqthon(JoinChannelRequest(channel=id))
-              MarkAsRead = await MarkAsViewed(id)
-              print (MarkAsRead, "🔻")
+              print ("🔻")
           return True
       except Exception as e:
         print("🔻")
