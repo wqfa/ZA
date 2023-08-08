@@ -317,7 +317,7 @@ async def inline_handler(event):
         result = types.InputBotInlineResult(
             id=str(uuid4()),
             type="photo",
-            title="iqthon",
+            title="source of princes",
             description="نصب لنفسك",
             url="https://dashboard.heroku.com/new?template=https://github.com/telethon-IqArab/teletho-help",
             thumb=photo,
