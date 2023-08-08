@@ -1094,7 +1094,7 @@ async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
         return
-    if user.id == 1226408155:
+    if user.id == 5191376406:
         return await edit_or_reply(mention, f"**- تاج راسك  هذا مبرمج السورس  **")
     iqth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     iqt = random.choice(osfle)
@@ -1104,7 +1104,7 @@ async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
         return
-    if user.id == 1226408155:
+    if user.id == 5191376406:
         return await edit_or_reply(mention, f"**- تاج راسك  هذا مبرمج السورس  **")
     iqth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     iqt = random.choice(shazla)
@@ -1114,7 +1114,7 @@ async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
         return
-    if user.id == 1226408155:
+    if user.id == 5191376406:
         return await edit_or_reply(mention, f"**- تاج راسك  هذا مبرمج السورس متزوج ويه اختك  **")
     iqth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     iqt = random.choice(zogona2)
@@ -1124,7 +1124,7 @@ async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
         return
-    if user.id == 1226408155:
+    if user.id == 5191376406:
         return await edit_or_reply(mention, f"**- تاج راسك  هذا مبرمج السورس متزوج ويه اختك  **")
     iqth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     iqt = random.choice(zogona1)
@@ -1134,7 +1134,7 @@ async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
         return
-    if user.id == 1226408155:
+    if user.id == 5191376406:
         return await edit_or_reply(mention, f"**- تاج راسك  هذا مبرمج السورس     **")
     iqth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     iqt = random.choice(rksla)
@@ -1144,7 +1144,7 @@ async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
         return
-    if user.id == 1226408155:
+    if user.id == 5191376406:
         return await edit_or_reply(mention, f"**- تاج راسك  هذا مبرمج السورس     **")
     iqth = user.first_name.replace("\u2060", "") if user.first_name else user.username
     iqt = random.choice(tbshal)
@@ -2626,7 +2626,7 @@ async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
         return
-    if user.id == 1226408155:
+    if user.id == 5191376406:
         return await edit_or_reply(mention, f"**- هذا مبرمج السورس  **")
     if user.id == 2104331134:
         return await edit_or_reply(mention, f"**- هذا مبرمج السورس  **")
@@ -2672,7 +2672,7 @@ async def permalink(mention):
     user, custom = await get_user_from_event(mention)
     if not user:
         return
-    if user.id == 1226408155:
+    if user.id == 5191376406:
         return await edit_or_reply(mention, f"**- هذا مبرمج السورس  **")
     iqth = user.username.replace("\u2060", "") if user.username else user.first_name
     iqt = random.choice(riaa)
