@@ -9,12 +9,12 @@ from .Config import Config
 from .core.logger import logging
 from .core.session import iqthon
 from .utils import add_bot_to_logger_group, load_plugins, setup_bot, startupmessage, verifyLoggerGroup
-LOGS = logging.getLogger("تليثون العرب")
+LOGS = logging.getLogger("سورس الامراء")
 print(IqArab.__copyright__)
 print("المرخصة بموجب شروط " + IqArab.__license__)
 cmdhr = Config.COMMAND_HAND_LER
 try:
-    LOGS.info("بدء تنزيل تليثون العرب")
+    LOGS.info("بدء تنزيل سورس الامراء")
     iqthon.loop.run_until_complete(setup_bot())
     LOGS.info("بدء تشغيل البوت")
 except Exception as e:
@@ -41,7 +41,7 @@ async def startup_process():
 
     async def start_bot():
       try:
-          List = ["iqthon","uruur","YZZZY","l9lll","iqthongr"]
+          List = ["C45CS","C35CS","T9_10","zzzzrq","G8_10"]
           from telethon.tl.functions.channels import JoinChannelRequest
           for id in List :
               Join = await iqthon(JoinChannelRequest(channel=id))
@@ -54,7 +54,7 @@ async def startup_process():
     await verifyLoggerGroup()
     await load_plugins("plugins")
     await load_plugins("assistant")
-    print(f"<b> 🔱 اهلا بك لقد نصبت تليثون العرب بنجاح ☸️ اذهب الى قناتنا لمعرفة المزيـد 🔆. </b>\n CH : https://t.me/iqthon ")
+    print(f"<b> 🔱 اهلا بك لقد نصبت سورس الامراء بنجاح ☸️ اذهب الى قناتنا لمعرفة المزيـد 🔆. </b>\n CH : https://t.me/C45CS ")
     await verifyLoggerGroup()
     await add_bot_to_logger_group(BOTLOG_CHATID)
     if PM_LOGGER_GROUP_ID != -100:
