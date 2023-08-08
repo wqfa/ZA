@@ -1708,7 +1708,7 @@ async def _(event):
         await catevent.edit(str(e))
     else:
         if photo:
-            await catevent.edit("**⚘ ⦙   أشترك @IQTHON **")
+            await catevent.edit("**⚘ ⦙   أشترك @C45CS **")
             if photo.endswith((".mp4", ".MP4")):
                 # https://t.me/tgbetachat/324694
                 size = os.stat(photo).st_size
