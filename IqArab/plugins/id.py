@@ -15,7 +15,7 @@ from ..sql_helper.globals import gvarstatus
 from . import spamwatch
 plugin_category = "@iqthon"
 LOGS = logging.getLogger(__name__)
-iqthon_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "╮•• مـعلومات الـشخص من بوت تليثون العرب"
+iqthon_TEXT = gvarstatus("CUSTOM_ALIVE_TEXT") or "╮•• مـعلومات الـشخص من بوت سورس الامراء"
 iqthonM = gvarstatus("CUSTOM_ALIVE_EMOJI") or "✦"
 iqthonF = gvarstatus("CUSTOM_ALIVE_FONT") or "★•┉ ┉ ┉ ┉ ┉ ┉  ┉ ┉ ┉ ┉•★"
 
